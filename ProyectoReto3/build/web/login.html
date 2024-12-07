@@ -1,0 +1,135 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background-image: url(Img/banner2.png); /* Color de fondo verde */
+            background-size: cover;
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .login-container {
+            text-align: center;
+            background: white;
+            opacity:0.8;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+        }
+        .login-container h1 {
+            font-size: 2em;
+            font-weight: bold;
+            color: black;
+        }
+        .input-container {
+            margin: 15px 0;
+            
+        }
+        .input-container label {
+            display: block;
+            font-size: 1em;
+            font-weight: bold;
+            margin-bottom: 5px;
+            color: black;
+        }
+        .input-container input,
+        .input-container select {
+            width: 300px;
+            padding: 10px;
+            border: 2px solid black;
+            border-radius: 10px;
+            font-size: 1em;
+        }
+        .forgot-password {
+            margin-top: 10px;
+            font-size: 0.9em;
+            color: black;
+            text-decoration: none;
+        }
+        .forgot-password:hover {
+            text-decoration: underline;
+        }
+        .error-message {
+            color: red;
+            font-size: 0.9em;
+            margin-top: 10px;
+            display: none; /* Oculto por defecto */
+        }
+        .login-btn {
+            margin-top: 15px;
+            padding: 10px 20px;
+            font-size: 1em;
+            background-color: black;
+            color: white;
+            border: none;
+            cursor: pointer;
+            border-radius: 10px;
+        }
+        .login-btn:hover {
+            background-color: gray;
+        }
+    </style>
+</head>
+<body>
+    <div class="login-container">
+        <h1>SICPROE (Sistema de Información Clientes, Proveedores y Empleados)</h1>
+        <div class="input-container">
+            <label for="usuario">Usuario</label>
+            <input type="text" id="usuario" placeholder="Ingrese su usuario">
+        </div>
+        <div class="input-container">
+            <label for="clave">Contraseña</label>
+            <input type="password" id="clave" placeholder="Ingrese su clave">
+        </div>
+        <div class="input-container">
+            <label for="rol">Rol</label>
+            <select id="rol">
+                <option value="" disabled selected>Seleccione un rol</option>
+                <option value="empleado">Empleado</option>
+                <option value="cliente">Cliente</option>
+                <option value="proveedor">Proveedor</option>
+                <option value="contratista">Contratista</option>
+            </select>
+        </div>
+        <button class="login-btn" onclick="validarLogin()">INGRESAR</button>
+        <a href="#" class="forgot-password">¿Olvidaste tu contraseña?</a>
+        <div class="error-message" id="error-msg">Clave, usuario o rol incorrecto</div>
+        <div class="error-message" id="error-msg">Datos correctos</div>
+    </div>
+
+    <script>
+        function validarLogin() {
+            const usuario = document.getElementById('usuario').value;
+            const clave = document.getElementById('clave').value;
+            const rol = document.getElementById('rol').value;
+
+            // Supongamos que estos son los datos correctos para cada rol
+            const credenciales = {
+                empleado: { usuario: 'empleado', clave: '1234' },
+                cliente: { usuario: 'cliente', clave: '5678' },
+                proveedor: { usuario: 'proveedor', clave: '91011' },
+                contratista: { usuario: 'contratista', clave: '1213' }
+            };
+
+            if (credenciales[rol] && credenciales[rol].usuario === usuario && credenciales[rol].clave === clave) {
+                alert(`Ingreso exitoso como ${rol}`);
+                // Aquí podrías redirigir al usuario a otra página
+                window.location.href = `index.html`;
+            } else {
+                const errorMsg = document.getElementById('error-msg');
+                errorMsg.style.display = 'block'; // Mostrar mensaje de error
+            }
+        }
+        
+    </script>
+</body>
+</html>

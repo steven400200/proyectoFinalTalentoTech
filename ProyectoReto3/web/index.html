@@ -1,0 +1,406 @@
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+              integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+                integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
+        <meta name="keywords"
+              content="energías renovables, energía solar, energía eólica, energía hidráulica, tecnologías limpias, energía sostenible, energías alternativas, producción de energía, consumo energético, recursos renovables, energías verdes, eficiencia energética, consumo verde, energía en colombia, transición energética colombia" />
+        <title>Reto 3</title>
+        <style>
+            button {
+                background-color: #A0D683 !important;
+                border-color: #A0D683 !important;
+            }
+
+            button:hover {
+                background-color: #72BF78 !important;
+                border-color: #72BF78 !important;
+            }
+
+            nav>div>a>img {
+                display: block;
+                max-width: 100%;
+                height: auto;
+            }
+
+            #footer {
+                background-color: #72BF78;
+            }
+
+            .nav-link,
+            #integrantes {
+                color: aliceblue !important;
+            }
+
+            #integrantes>h4 {
+                font-weight: bold;
+            }
+
+            .active,
+            .nav-link:hover,
+            .navbar-brand:hover {
+                color: #1A3636 !important;
+            }
+
+            thead {
+                background-color: #72BF78;
+                color: aliceblue;
+            }
+
+            tbody>tr:hover {
+                background-color: #A0D683;
+                color: aliceblue;
+                cursor: pointer;
+            }
+            .services-section {
+                display: flex;
+                justify-content: space-around;
+                flex-wrap: wrap;
+                padding: 20px;
+                background-color: #fff;
+            }
+
+            .service-card {
+                background-color: #e8f5e9;
+                border-radius: 8px;
+                text-align: center;
+                padding: 20px;
+                margin: 10px;
+                width: 30%;
+                box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            }
+
+            .service-card img {
+                width: 100%;
+                border-radius: 8px 8px 0 0;
+            }
+
+            .service-card p {
+                font-size: 16px;
+                font-weight: bold;
+                margin: 10px 0 0;
+                color: #2e7d32;
+            }
+            .icons-section {
+                display: flex;
+                justify-content: space-around;
+                align-items: center;
+                background-color: #fff;
+                padding: 20px 10px;
+                border-bottom: 2px solid #ccc;
+            }
+
+            .icon-item {
+                text-align: center;
+            }
+
+            .icon-item img {
+                width: 50px;
+                height: 50px;
+                margin-bottom: 10px;
+            }
+
+            .icon-item p {
+                font-size: 14px;
+                color: #070707; /* Naranja */
+                margin: 0;
+            }
+            a {
+                text-decoration: none;
+            }
+            .footer {
+                background-color: #b3b2b2; /* Fondo oscuro */
+                color: #fff; /* Texto blanco */
+                padding: 40px 20px;
+            }
+
+            .footer-container {
+                display: flex;
+                justify-content: space-between;
+                flex-wrap: wrap;
+                max-width: 1200px;
+                margin: 0 auto;
+            }
+
+            .footer-column {
+                display:grid;
+                grid-template-columns: 1.5fr 0.5fr 1.5fr;
+                margin: 10px;
+            }
+
+            .footer-column h3 {
+                font-size: 18px;
+                margin-bottom: 15px;
+                color: #000000; /* Color destacado para títulos */
+            }
+
+            .footer-column ul {
+                margin-top: 10px;
+                list-style: none;
+                padding: 0;
+            }
+
+            .footer-column ul li {
+                margin-bottom: 10px;
+            }
+
+            .footer-column ul li a {
+                color: #fff;
+                text-decoration: none;
+                transition: color 0.3s;
+            }
+
+            .footer-column ul li a:hover {
+                color: #77ab59; /* Color al pasar el ratón */
+            }
+
+            /* Redes sociales */
+            .social-links {
+                margin-top: 30px;
+                text-align: left;
+            }
+            .social-links img {
+                width: 20px; /* Tamaño de los íconos */
+                margin-right: 10px;
+                vertical-align: middle;
+            }
+
+            /* Sección inferior del pie de página */
+            .footer-bottom {
+                text-align: center;
+                padding: 20px 0;
+                font-size: 14px;
+                border-top: 1px solid #b3b2b2; /* Separador */
+                margin-top: 20px;
+            }
+
+            .footer-bottom p {
+                margin: 0;
+            }
+
+        </style>
+    </head>
+    <body>
+        <div class="col-md-12 mr-0 pr-0">
+            <!-- Aquí va el banner -->
+            <div class="col-md-12 mt-5 mx-auto">
+                <img src="Img/banner.png" class="w-100" alt="">
+            </div>
+            <!-- Navegador (Nav) -->
+            <nav class="navbar navbar-expand-md navbar-dark fixed-top" style="background-color: #72BF78;">
+                <div class="container-fluid">
+                    <a href="#">
+                        <img src="Img/logo-inicial-pequeño.png">
+                    </a>
+                    <a class="navbar-brand" href="#">EvolucionAndo COL</a>
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse"
+                            aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarCollapse">
+                        <ul class="navbar-nav me-auto mb-2 mb-md-0">
+                            <li class="nav-item">
+                                <a class="nav-link" aria-current="page" href="index.html">Inicio</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="glosario.jsp">Glosarío</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="tablas.jsp">Tabla Energías</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="tips.jsp">Tips de energía</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="graficas.jsp">Gráficas</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+            <!-- Linea separadora -->
+            <!-- Titulo -->
+            <div id="inicio" class="col-md-8 mx-auto mt-5">
+                <hr class="bg-success border-2 border-top border-success" />
+            </div>
+            <h1 class="h1 text-center mt-5 mb-3 p-1">
+                BIENVENIDOS A NUESTRO PORTAL DE ENERGÍAS RENOVABLES
+            </h1>
+            <!-- Comienzo carrusel -->
+            <div class="col-md-8 p-1 mx-auto mt-5 mb-3">
+                <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
+                    <div class="carousel-indicators">
+                        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0"
+                                class="active" aria-current="true" aria-label="Slide 1"></button>
+                        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1"
+                                aria-label="Slide 2"></button>
+                        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2"
+                                aria-label="Slide 3"></button>
+                        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="3"
+                                aria-label="Slide 4"></button>
+                        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="4"
+                                aria-label="Slide 5"></button>
+                    </div>
+                    <div class="carousel-inner">
+                        <div class="carousel-item active">
+                            <img src="Img/banner2.png" class="d-block w-100" alt="...">
+                        </div>
+                        <div class="carousel-item">
+                            <img src="Img/banner3.png" class="d-block w-100" alt="...">
+                        </div>
+                        <div class="carousel-item">
+                            <img src="Img/banner4.png" class="d-block w-100" alt="...">
+                        </div>
+                        <div class="carousel-item">
+                            <img src="Img/banner5.png" class="d-block w-100" alt="...">
+                        </div>
+                        <div class="carousel-item">
+                            <img src="Img/banner6.png" class="d-block w-100" alt="...">
+                        </div>
+                    </div>
+                    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators"
+                            data-bs-slide="prev">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Previous</span>
+                    </button>
+                    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators"
+                            data-bs-slide="next">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Next</span>
+                    </button>
+                </div>
+            </div>
+            <!-- Mensaje inicial -->
+            <div class="col-md-8 mx-auto mt-5 p-2">
+                <h1 class="h1 text-center">
+                    La importancia de la energía renovable
+                </h1>
+                <p class="lead fs-3 text-center-justify mt-3">
+                    La energía renovable es importante para resolver el cambio climático, la dependencia de los combustibles
+                    fósiles y el acceso generalizado a la energía. Según informes internacionales, su integración podría
+                    reducir radicalmente las emisiones de CO2 y promover la sostenibilidad energética. Además, con la
+                    aplicación de las energías renovables podemos:
+                    Promover la independencia energética: Reducir la dependencia de combustibles importados.
+                    Estimular el desarrollo económico: crear niveles de empleo local. Durante la instalación, operación y
+                    mantenimiento del sistema.
+                    Aumentan la seguridad energética: proporcionan una fuente diversa, estable y sostenible.
+                </p>
+            </div>
+
+            <!-- Título de servicios -->
+            <div class="services-title">
+                <h2 class="h1 text-center mt-5 mb-3 p-1">Nuestros Servicios</h2>
+            </div>
+
+            <!-- Tarjetas de servicios -->
+            <div class="services-section">
+                <div class="service-card">
+                    <h2>Consultoría en Transición Energética</h2>
+                    <p>Ofrecemos auditorías energéticas, diseño de estrategias de transición hacia energías limpias y asesoramiento para cumplir con normativas ambientales, ayudando a empresas y comunidades a optimizar su consumo energético.</p>
+                </div>
+                <div class="service-card">
+                    <h2>Implementación de Energías Renovables</h2>
+                    <p>Diseñamos e instalamos sistemas de energía solar, eólica, geotérmica y biomasa para hogares, empresas y comunidades, garantizando soluciones limpias y sostenibles.</p>
+                </div>
+                <div class="service-card">
+                    <h2>Educación y Capacitación</h2>
+                    <p>Brindamos talleres, capacitaciones técnicas y seminarios para sensibilizar sobre la energía renovable y formar profesionales en instalación y mantenimiento de estas tecnologías.</p>
+                </div>
+                <div class="service-card">
+                    <h2>Soluciones para Comunidades Rurales</h2>
+                    <p>Desarrollamos proyectos de electrificación rural, tecnologías sostenibles y asistencia técnica para mejorar la calidad de vida en comunidades desatendidas.</p>
+                </div>
+                <div class="service-card">
+                    <h2>Innovación y Desarrollo Tecnológico</h2>
+                    <p>Creamos tecnologías limpias adaptadas al contexto local, como sistemas de almacenamiento de energía y soluciones digitales para una gestión eficiente.</p>
+                </div>
+                <div class="service-card">
+                    <h2>Consultoría Social y Ambiental</h2>
+                    <p>Realizamos evaluaciones de impacto ambiental, diseñamos proyectos con enfoque social y ayudamos a reducir la huella de carbono mediante planes personalizados.</p>
+                </div>
+                <div class="service-card">
+                    <h2>Monitoreo y Evaluación de Proyectos</h2>
+                    <p>Supervisamos proyectos energéticos, optimizamos sistemas existentes y generamos reportes de impacto para garantizar sostenibilidad y eficiencia.</p>
+                </div>
+                <div class="service-card">
+                    <h2>Comercialización de Productos y Equipos</h2>
+                    <p>Proveemos paneles solares, turbinas, baterías y otros equipos para facilitar la transición energética de empresas y hogares.</p>
+                </div>
+            </div>
+            <!-- Linea separadora -->
+            <div id="index" class="col-md-8 mx-auto mt-5">
+                <hr class="bg-success border-2 border-top border-success" />
+            </div>
+            <!-- Iconos superiores -->
+            <div class="icons-section">
+                <div class="icon-item">
+                    <img src="Img/icono1.png" alt="Pague aquí su factura">
+                    <p>Pague aquí su factura</p>
+                </div>
+                <div class="icon-item">
+                    <img src="Img/icono2.png" alt="PQR en línea">
+                    <p>PQR en línea</p>
+                </div>
+                <div class="icon-item">
+                    <img src="Img/icono3.png" alt="Descargue su factura aquí">
+                    <p>Descargue su factura aquí</p>
+                </div>
+                <div class="icon-item">
+                    <a href="login.html">
+                        <img src="Img/icono4.png" alt="Club Clientes QI">
+                        <p>Login</p>
+                    </a>
+                </div>
+                <div class="icon-item">
+                    <img src="Img/icono5.png" alt="Cortes Programados">
+                    <p>Asistencia VIP</p>
+                </div>
+                <div class="icon-item">
+                    <img src="Img/icono6.png" alt="Reporte de Emergencia Eléctrica">
+                    <p>Reporte de Emergencia Eléctrica</p>
+                </div>
+            </div>
+            <br>
+            <!-- Inicio del footer-->
+            <div id="footer" class="d-flex pt-5 pb-5">
+
+                <div class="footer-column">
+                    <div id="integrantes" class="mx-auto p-2">
+                        <h4 class="h3">Integrantes del Proyecto:</h4>
+                        <ul class="nav flex-column">
+                            <li class="nav-item mb-2">Giovanny Steven Contreras Lozano</li>
+                            <li class="nav-item mb-2">Maria Camila Montilla Orozco</li>
+                            <li class="nav-item mb-2">Jessica López</li>
+                            <li class="nav-item mb-2">Juan Esteban Quintero Bolaños</li>
+                            <li class="nav-item">Jhon Alexander Lopez Mateus</li>
+                        </ul>
+                    </div>
+
+                    <ul class="social-links">
+                        <li><a href="#"><img src="Img/facebook.png" alt="Facebook"> Facebook</a></li>
+                        <li><a href="#"><img src="Img/x.png" alt="Twitter"> Twitter</a></li>
+                        <li><a href="#"><img src="Img/instagram.png" alt="Instagram"> Instagram</a></li>
+                        <li><a href="#"><img src="Img/youtube.png" alt="YouTube"> YouTube</a></li>
+                    </ul>
+                    <div>
+                        <ul>
+                            <li><a href="#">NIT: 888923456-3</a></li>
+                            <li><a href="#">CALLE 76 # 90 - 665, ARMENIA - QUÍNDIO, COLOMBIA</a></li>
+                            <li><a href="#">CONMUTADOR: (57) (606) 6006688</a></li>
+                            <li><a href="#">WHATSAPP: (57) 300 111555</a></li>
+                            <li><a href="#">PROGRAMA DE TRANSPARENCIA Y ÉTICA EMPRESARIAL: etica@evolucionandocol.com.co</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 EvolucionAndo COL S.A.S. Todos los derechos reservados.</p>
+            </div>
+        </div>
+    </body>
+</html>
